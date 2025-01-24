@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="rightHand_9dof">
+  <asset>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/base_link.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/base_link.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j1_1.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j1_1.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j1_2.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j1_2.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j1_3.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j1_3.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j2_1.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j2_1.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j2_2.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j2_2.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j2_3.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j2_3.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j2_4.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j2_4.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j3_1.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j3_1.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j3_2.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j3_2.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j3_3.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j3_3.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j4_1.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j4_1.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j4_2.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j4_2.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j4_3.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j4_3.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j4_4.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j4_4.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j5_1.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j5_1.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j5_2.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j5_2.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j5_3.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j5_3.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j5_4.STL"/>
+    <mesh file="file:///home/moning/HHHHand/rightHand_9dof/meshes/j5_4.STL"/>
+  </asset>
+  <worldbody>
+    <body name="base_link">
+      <inertial>
+        <pos xyz="0.0683624336020756 -0.00133735775793573 0.00194443427036355"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="base_link.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="base_link.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <joint name="j1_1" type="revolute" axis="-1.0 0.0 0.0" pos="0.049276 0.020943 -0.010147" euler="0.0 0.0 0.0">
+        <child body="j1_1"/>
+      </joint>
+      <joint name="j2_1" type="revolute" axis="0.0 0.0 1.0" pos="0.10898 0.026943 0.018403" euler="0.0 0.0 0.0">
+        <child body="j2_1"/>
+      </joint>
+      <joint name="j3_1" type="revolute" axis="0.0 1.0 0.0" pos="0.1314 0.016593 0.010248" euler="0.0 0.0 0.0">
+        <child body="j3_1"/>
+      </joint>
+      <joint name="j4_1" type="revolute" axis="0.0 0.0 1.0" pos="0.10898 -0.011057 0.018403" euler="0.0 0.0 0.0">
+        <child body="j4_1"/>
+      </joint>
+      <joint name="j5_1" type="revolute" axis="0.0 0.0 1.0" pos="0.10398 -0.030057 0.016403" euler="0.0 0.0 0.0">
+        <child body="j5_1"/>
+      </joint>
+    </body>
+    <body name="j1_1">
+      <inertial>
+        <pos xyz="0.00848406510253458 0.0295164327405254 -0.0108446381518449"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="j1_1.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="j1_1.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <joint name="j1_2" type="revolute" axis="0.0 1.0 0.0" pos="0.029931 0.046569 -0.026403" euler="-1.8577 0.2094 0.6138">
+        <child body="j1_2"/>
+      </joint>
+    </body>
+    <body name="j1_2">
+      <inertial>
+        <pos xyz="0.0185269940540907 -0.00863728702103245 0.000630679208129425"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="j1_2.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="j1_2.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <joint name="l1_3" type="revolute" axis="0.0 1.0 0.0" pos="0.032618 -0.015195 -0.002939" euler="0.0 0.28886 0.0">
+        <child body="j1_3"/>
+      </joint>
+    </body>
+    <body name="j1_3">
+      <inertial>
+        <pos xyz="0.0139908429316881 0.00656827074719868 0.00277710647559409"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="j1_3.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="j1_3.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+    </body>
+    <body name="j2_1">
+      <inertial>
+        <pos xyz="-0.0109021846028509 -0.00015123605073003 -0.0116035715077449"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="j2_1.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="j2_1.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <joint name="j2_2" type="revolute" axis="0.0 1.0 0.0" pos="0.019329 0.0088622 -0.010155" euler="0.0 0.0 0.010951">
+        <child body="j2_2"/>
+      </joint>
+    </body>
+    <body name="j2_2">
+      <inertial>
+        <pos xyz="0.0171533579024933 -0.00863762290849002 0.00324433960543084"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="j2_2.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="j2_2.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <joint name="j2_3" type="revolute" axis="-0.010951 0.99994 0.0" pos="0.030752 -0.00665 -0.00026319" euler="0.0 0.0 -0.010951">
+        <child body="j2_3"/>
+      </joint>
+    </body>
+    <body name="j2_3">
+      <inertial>
+        <pos xyz="0.0109214429914886 -0.00187602538986797 0.00107581076765038"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="j2_3.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="j2_3.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <joint name="j2_4" type="revolute" axis="-0.010951 0.99994 0.0" pos="0.025709 -0.009069 0.0015179" euler="0.0 0.0 0.0">
+        <child body="j2_4"/>
+      </joint>
+    </body>
+    <body name="j2_4">
+      <inertial>
+        <pos xyz="0.0171356833785417 0.00754140550243854 -0.00437370313496573"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="j2_4.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="j2_4.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+    </body>
+    <body name="j3_1">
+      <inertial>
+        <pos xyz="0.0171788941519819 -0.00863762322958384 0.00310629702161309"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="j3_1.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="j3_1.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <joint name="j3_2" type="revolute" axis="0.0 1.0 0.0" pos="0.030748 -0.00665 -0.00051046" euler="0.0 0.0 0.0">
+        <child body="j3_2"/>
+      </joint>
+    </body>
+    <body name="j3_2">
+      <inertial>
+        <pos xyz="0.0109245620397546 -0.00199550046122171 0.000791537803867419"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="j3_2.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="j3_2.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <joint name="j3_3" type="revolute" axis="0.0 1.0 0.0" pos="0.025639 -0.00935 0.00085035" euler="0.0 0.0 0.0">
+        <child body="j3_3"/>
+      </joint>
+    </body>
+    <body name="j3_3">
+      <inertial>
+        <pos xyz="0.0169896947318144 0.0073532842341105 -0.00518784007591633"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="j3_3.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="j3_3.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+    </body>
+    <body name="j4_1">
+      <inertial>
+        <pos xyz="-0.0109013296247695 0.000204051783920106 -0.0116035731120066"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="j4_1.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="j4_1.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <joint name="j4_2" type="revolute" axis="0.021634 0.99977 0.0" pos="0.019608 0.0082277 -0.010155" euler="0.0 0.0 0.0">
+        <child body="j4_2"/>
+      </joint>
+    </body>
+    <body name="j4_2">
+      <inertial>
+        <pos xyz="0.0170606118935363 -0.00900882777667383 0.00267365194958995"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="j4_2.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="j4_2.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <joint name="j4_3" type="revolute" axis="0.021634 0.99977 0.0" pos="0.030575 -0.0073132 -0.0012829" euler="0.0 0.0 0.0">
+        <child body="j4_3"/>
+      </joint>
+    </body>
+    <body name="j4_3">
+      <inertial>
+        <pos xyz="0.0108751295852679 -0.00223129382300563 0.000841077351097966"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="j4_3.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="j4_3.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <joint name="j4_4" type="revolute" axis="0.021634 0.99977 0.0" pos="0.025427 -0.0099024 0.00096663" euler="0.0 0.0 0.0">
+        <child body="j4_4"/>
+      </joint>
+    </body>
+    <body name="j4_4">
+      <inertial>
+        <pos xyz="0.0170137677006189 0.00698679920200732 -0.00559899726887094"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="j4_4.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="j4_4.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+    </body>
+    <body name="j5_1">
+      <inertial>
+        <pos xyz="-0.0109007280902581 0.00023399140851077 -0.0116035731811754"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="j5_1.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="j5_1.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <joint name="j5_2" type="revolute" axis="0.02438 0.9997 0.0" pos="0.01963 0.0081738 -0.010155" euler="0.0 0.0 0.0">
+        <child body="j5_2"/>
+      </joint>
+    </body>
+    <body name="j5_2">
+      <inertial>
+        <pos xyz="0.0169389605954751 -0.00905328866489252 0.00323751882787298"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="j5_2.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="j5_2.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <joint name="j5_3" type="revolute" axis="0.02438 0.9997 0.0" pos="0.03058 -0.0073977 -0.00027542" euler="0.0 0.0 0.0">
+        <child body="j5_3"/>
+      </joint>
+    </body>
+    <body name="j5_3">
+      <inertial>
+        <pos xyz="0.0108549660189987 -0.00226081603883158 0.00100647894279877"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="j5_3.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="j5_3.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <joint name="j5_4" type="revolute" axis="0.02438 0.9997 0.0" pos="0.025382 -0.0099718 0.001355" euler="0.0 0.0 0.0">
+        <child body="j5_4"/>
+      </joint>
+    </body>
+    <body name="j5_4">
+      <inertial>
+        <pos xyz="0.017143730351838 0.00693733684723838 -0.00525331431961612"/>
+        <euler euler="0.0 0.0 0.0"/>
+      </inertial>
+      <geom type="mesh" mesh="j5_4.STL" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+      <geom type="mesh" mesh="j5_4.STL" contype="1" conaffinity="1" pos="0.0 0.0 0.0" euler="0.0 0.0 0.0"/>
+    </body>
+  </worldbody>
+</mujoco>

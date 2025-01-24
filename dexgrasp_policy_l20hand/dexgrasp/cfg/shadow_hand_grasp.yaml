@@ -3217,9 +3217,9 @@ env:
 #  }
 
   object_code_dict: {
-    'core/bottle-1a7ba1f4c892e2da30711cdbdbc73924': [ 0.1 ],
-    'core/bowl-e16e27d3670853b12d4e6b2984840098': [ 0.1 ],
-    'core/cellphone-31e8327ffa4ba6a87790cd6f6e8952aa': [ 0.1 ],
+#    'core/bottle-1a7ba1f4c892e2da30711cdbdbc73924': [ 0.1 ],
+#    'core/bowl-e16e27d3670853b12d4e6b2984840098': [ 0.1 ],
+#    'core/cellphone-31e8327ffa4ba6a87790cd6f6e8952aa': [ 0.1 ],
     'core/jar-7f355d9510fbe2b02af07f81a2ca6736': [ 0.1 ],
   }
 
@@ -3260,7 +3260,7 @@ env:
   asset:
 #    assetRoot: "../assets"
 #    assetRoot: "/media/moning/Newsmy/assets_tiny_my"
-    assetRoot: "/media/moning/Newsmy/assets_tiny_l20"
+    assetRoot: "../assets_tiny_l20"
 #    assetFileName: "mjcf/open_ai_assets/hand/shadow_hand.xml"
     assetFileName: "urdf/l20_652/urdf/l20_652.urdf"
 #    assetFileName: "urdf/rightHand_9dof/mjcf/rightHand_9dof.xml"

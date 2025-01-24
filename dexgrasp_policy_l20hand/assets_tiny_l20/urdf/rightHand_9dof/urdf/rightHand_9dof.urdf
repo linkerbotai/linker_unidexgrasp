@@ -1,0 +1,1091 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="rightHand_9dof">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0683624336020756 -0.00133735775793573 0.00194443427036355"
+        rpy="0 0 0" />
+      <mass
+        value="0.111516747827465" />
+      <inertia
+        ixx="7.24670674983265E-05"
+        ixy="-4.12951337771663E-06"
+        ixz="-1.83910865466763E-05"
+        iyy="0.00012585425251154"
+        iyz="1.46558354404392E-08"
+        izz="0.000170635293519076" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="j1_1">
+    <inertial>
+      <origin
+        xyz="0.00848406510253458 0.0295164327405254 -0.0108446381518449"
+        rpy="0 0 0" />
+      <mass
+        value="0.0258720017182747" />
+      <inertia
+        ixx="2.30258679820338E-06"
+        ixy="-7.66260362752493E-07"
+        ixz="2.64209290902013E-07"
+        iyy="2.83812470500852E-06"
+        iyz="5.93022884843978E-07"
+        izz="4.30290730491524E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j1_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j1_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j1_1"
+    type="revolute">
+    <origin
+      xyz="0.049276 0.020943 -0.010147"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="j1_1" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="1"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="j1_2">
+    <inertial>
+      <origin
+        xyz="0.0185269940540907 -0.00863728702103245 0.000630679208129425"
+        rpy="0 0 0" />
+      <mass
+        value="0.00436160052960547" />
+      <inertia
+        ixx="1.09538423598491E-07"
+        ixy="-1.41463437716397E-10"
+        ixz="-1.43454756297572E-08"
+        iyy="3.72258200350998E-07"
+        iyz="-1.3602170050025E-11"
+        izz="3.01794866509649E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j1_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j1_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j1_2"
+    type="revolute">
+    <origin
+      xyz="0.029931 0.046569 -0.026403"
+      rpy="-1.8577 0.2094 0.6138" />
+    <parent
+      link="j1_1" />
+    <child
+      link="j1_2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0.7"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="j1_3">
+    <inertial>
+      <origin
+        xyz="0.0139908429316881 0.00656827074719868 0.00277710647559409"
+        rpy="0 0 0" />
+      <mass
+        value="0.00427701390410589" />
+      <inertia
+        ixx="1.79106034207539E-07"
+        ixy="2.72655926748159E-11"
+        ixz="-7.64663667598306E-08"
+        iyy="4.68336237571597E-07"
+        iyz="5.73525107872226E-11"
+        izz="4.5285466241166E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j1_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j1_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l1_3"
+    type="revolute">
+    <origin
+      xyz="0.032618 -0.015195 -0.002939"
+      rpy="0 0.28886 0" />
+    <parent
+      link="j1_2" />
+    <child
+      link="j1_3" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="j2_1">
+    <inertial>
+      <origin
+        xyz="-0.0109021846028509 -0.00015123605073003 -0.0116035715077449"
+        rpy="0 0 0" />
+      <mass
+        value="0.0097995031534712" />
+      <inertia
+        ixx="4.11996784059113E-07"
+        ixy="2.85193849077289E-08"
+        ixz="-3.04272408657525E-08"
+        iyy="7.23220112640677E-07"
+        iyz="8.87270160576237E-09"
+        izz="5.47533905789446E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j2_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j2_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j2_1"
+    type="revolute">
+    <origin
+      xyz="0.10898 0.026943 0.018403"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="j2_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.18"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="j2_2">
+    <inertial>
+      <origin
+        xyz="0.0171533579024933 -0.00863762290849002 0.00324433960543084"
+        rpy="0 0 0" />
+      <mass
+        value="0.00422246941453819" />
+      <inertia
+        ixx="1.11160146248491E-07"
+        ixy="-5.59993033309821E-11"
+        ixz="-4.14313728731318E-08"
+        iyy="3.50459905277449E-07"
+        iyz="-5.91425111271958E-11"
+        izz="2.74998585933734E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j2_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j2_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j2_2"
+    type="revolute">
+    <origin
+      xyz="0.019329 0.0088622 -0.010155"
+      rpy="0 0 0.010951" />
+    <parent
+      link="j2_1" />
+    <child
+      link="j2_2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="j2_3">
+    <inertial>
+      <origin
+        xyz="0.0109214429914886 -0.00187602538986797 0.00107581076765038"
+        rpy="0 0 0" />
+      <mass
+        value="0.00368958148571398" />
+      <inertia
+        ixx="1.03511568568849E-07"
+        ixy="-2.82958275569924E-09"
+        ixz="-2.99211523130154E-08"
+        iyy="2.99400310994048E-07"
+        iyz="1.03169355496236E-09"
+        izz="2.37303370115965E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j2_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j2_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j2_3"
+    type="revolute">
+    <origin
+      xyz="0.030752 -0.00665 -0.00026319"
+      rpy="0 0 -0.010951" />
+    <parent
+      link="j2_2" />
+    <child
+      link="j2_3" />
+    <axis
+      xyz="-0.010951 0.99994 0" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="j2_4">
+    <inertial>
+      <origin
+        xyz="0.0171356833785417 0.00754140550243854 -0.00437370313496573"
+        rpy="0 0 0" />
+      <mass
+        value="0.0053306286942772" />
+      <inertia
+        ixx="1.49578611703066E-07"
+        ixy="-2.06240158585904E-09"
+        ixz="3.13081921463205E-08"
+        iyy="3.31142859176749E-07"
+        iyz="3.34609662087195E-10"
+        izz="4.1568953525289E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j2_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j2_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j2_4"
+    type="revolute">
+    <origin
+      xyz="0.025709 -0.009069 0.0015179"
+      rpy="0 0 0" />
+    <parent
+      link="j2_3" />
+    <child
+      link="j2_4" />
+    <axis
+      xyz="-0.010951 0.99994 0" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="j3_1">
+    <inertial>
+      <origin
+        xyz="0.0171788941519819 -0.00863762322958384 0.00310629702161309"
+        rpy="0 0 0" />
+      <mass
+        value="0.00422246986527843" />
+      <inertia
+        ixx="1.10504442431439E-07"
+        ixy="-5.64785967125181E-11"
+        ixz="-4.01085894305379E-08"
+        iyy="3.50459811527955E-07"
+        iyz="-5.86918121489264E-11"
+        izz="2.75654173343156E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j3_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j3_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j3_1"
+    type="revolute">
+    <origin
+      xyz="0.1314 0.016593 0.010248"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="j3_1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="j3_2">
+    <inertial>
+      <origin
+        xyz="0.0109245620397546 -0.00199550046122171 0.000791537803867419"
+        rpy="0 0 0" />
+      <mass
+        value="0.00368958849911514" />
+      <inertia
+        ixx="1.02006534347949E-07"
+        ixy="-6.48239488302116E-10"
+        ixz="-2.63828228369243E-08"
+        iyy="2.99439186141209E-07"
+        iyz="1.3766962809963E-09"
+        izz="2.38770314273155E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j3_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j3_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j3_2"
+    type="revolute">
+    <origin
+      xyz="0.030748 -0.00665 -0.00051046"
+      rpy="0 0 0" />
+    <parent
+      link="j3_1" />
+    <child
+      link="j3_2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="j3_3">
+    <inertial>
+      <origin
+        xyz="0.0169896947318144 0.0073532842341105 -0.00518784007591633"
+        rpy="0 0 0" />
+      <mass
+        value="0.00533064050031233" />
+      <inertia
+        ixx="1.53132932724755E-07"
+        ixy="-7.33375414546117E-11"
+        ixz="4.38149526437134E-08"
+        iyy="3.31167223103925E-07"
+        iyz="-5.1176459049974E-12"
+        izz="4.1211229778684E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j3_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j3_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j3_3"
+    type="revolute">
+    <origin
+      xyz="0.025639 -0.00935 0.00085035"
+      rpy="0 0 0" />
+    <parent
+      link="j3_2" />
+    <child
+      link="j3_3" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="j4_1">
+    <inertial>
+      <origin
+        xyz="-0.0109013296247695 0.000204051783920106 -0.0116035731120066"
+        rpy="0 0 0" />
+      <mass
+        value="0.00979950097155459" />
+      <inertia
+        ixx="4.14184626376735E-07"
+        ixy="3.85935281900356E-08"
+        ixz="-3.01219956160942E-08"
+        iyy="7.21032352424665E-07"
+        iyz="9.85934987615233E-09"
+        izz="5.47533875129547E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j4_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j4_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j4_1"
+    type="revolute">
+    <origin
+      xyz="0.10898 -0.011057 0.018403"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="j4_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.18"
+      upper="0"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="j4_2">
+    <inertial>
+      <origin
+        xyz="0.0170606118935363 -0.00900882777667383 0.00267365194958995"
+        rpy="0 0 0" />
+      <mass
+        value="0.00422246949737102" />
+      <inertia
+        ixx="1.08704366502169E-07"
+        ixy="5.17349649423523E-09"
+        ixz="-3.59022958709971E-08"
+        iyy="3.50349257545927E-07"
+        iyz="7.19630107751398E-10"
+        izz="2.77565029173594E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j4_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j4_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j4_2"
+    type="revolute">
+    <origin
+      xyz="0.019608 0.0082277 -0.010155"
+      rpy="0 0 0" />
+    <parent
+      link="j4_1" />
+    <child
+      link="j4_2" />
+    <axis
+      xyz="0.021634 0.99977 0" />
+    <limit
+      lower="0"
+      upper="1"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="j4_3">
+    <inertial>
+      <origin
+        xyz="0.0108751295852679 -0.00223129382300563 0.000841077351097966"
+        rpy="0 0 0" />
+      <mass
+        value="0.0036895881402408" />
+      <inertia
+        ixx="1.02312603625203E-07"
+        ixy="3.61119507393826E-09"
+        ixz="-2.69659694272963E-08"
+        iyy="2.99375120419354E-07"
+        iyz="1.95758497633368E-09"
+        izz="2.3852815188124E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j4_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j4_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j4_3"
+    type="revolute">
+    <origin
+      xyz="0.030575 -0.0073132 -0.0012829"
+      rpy="0 0 0" />
+    <parent
+      link="j4_2" />
+    <child
+      link="j4_3" />
+    <axis
+      xyz="0.021634 0.99977 0" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="j4_4">
+    <inertial>
+      <origin
+        xyz="0.0170137677006189 0.00698679920200732 -0.00559899726887094"
+        rpy="0 0 0" />
+      <mass
+        value="0.00533063169901466" />
+      <inertia
+        ixx="1.55493362593546E-07"
+        ixy="3.72948242584322E-09"
+        ixz="5.0039605172468E-08"
+        iyy="3.31088903584455E-07"
+        iyz="-1.08723883158221E-09"
+        izz="4.09831390198328E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j4_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j4_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j4_4"
+    type="revolute">
+    <origin
+      xyz="0.025427 -0.0099024 0.00096663"
+      rpy="0 0 0" />
+    <parent
+      link="j4_3" />
+    <child
+      link="j4_4" />
+    <axis
+      xyz="0.021634 0.99977 0" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="j5_1">
+    <inertial>
+      <origin
+        xyz="-0.0109007280902581 0.00023399140851077 -0.0116035731811754"
+        rpy="0 0 0" />
+      <mass
+        value="0.00979950096372399" />
+      <inertia
+        ixx="4.14398933084867E-07"
+        ixy="3.94356965269345E-08"
+        ixz="-3.00948030476297E-08"
+        iyy="7.20818044944392E-07"
+        iyz="9.94204324451879E-09"
+        izz="5.47533875444598E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j5_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j5_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j5_1"
+    type="revolute">
+    <origin
+      xyz="0.10398 -0.030057 0.016403"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="j5_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.18"
+      upper="0"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="j5_2">
+    <inertial>
+      <origin
+        xyz="0.0169389605954751 -0.00905328866489252 0.00323751882787298"
+        rpy="0 0 0" />
+      <mass
+        value="0.00422246702333999" />
+      <inertia
+        ixx="1.11266739127937E-07"
+        ixy="5.77723571968915E-09"
+        ixz="-4.13553756605301E-08"
+        iyy="3.50320229653206E-07"
+        iyz="9.49390520792032E-10"
+        izz="2.75031338209532E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j5_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j5_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j5_2"
+    type="revolute">
+    <origin
+      xyz="0.01963 0.0081738 -0.010155"
+      rpy="0 0 0" />
+    <parent
+      link="j5_1" />
+    <child
+      link="j5_2" />
+    <axis
+      xyz="0.02438 0.9997 0" />
+    <limit
+      lower="0"
+      upper="1"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="j5_3">
+    <inertial>
+      <origin
+        xyz="0.0108549660189987 -0.00226081603883158 0.00100647894279877"
+        rpy="0 0 0" />
+      <mass
+        value="0.0036895883812266" />
+      <inertia
+        ixx="1.03182031574829E-07"
+        ixy="4.11093871186685E-09"
+        ixz="-2.90127939909413E-08"
+        iyy="2.99355097148529E-07"
+        iyz="2.07160676717112E-09"
+        izz="2.37678336631994E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j5_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j5_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j5_3"
+    type="revolute">
+    <origin
+      xyz="0.03058 -0.0073977 -0.00027542"
+      rpy="0 0 0" />
+    <parent
+      link="j5_2" />
+    <child
+      link="j5_3" />
+    <axis
+      xyz="0.02438 0.9997 0" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="j5_4">
+    <inertial>
+      <origin
+        xyz="0.017143730351838 0.00693733684723838 -0.00525331431961612"
+        rpy="0 0 0" />
+      <mass
+        value="0.00533061967537462" />
+      <inertia
+        ixx="1.5357725633928E-07"
+        ixy="4.25929038653895E-09"
+        ixz="4.47981208037334E-08"
+        iyy="3.31065134295965E-07"
+        iyz="-1.09843485114837E-09"
+        izz="4.11769636679655E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j5_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rightHand_9dof/meshes/j5_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j5_4"
+    type="revolute">
+    <origin
+      xyz="0.025382 -0.0099718 0.001355"
+      rpy="0 0 0" />
+    <parent
+      link="j5_3" />
+    <child
+      link="j5_4" />
+    <axis
+      xyz="0.02438 0.9997 0" />
+    <limit
+      lower="0"
+      upper="1.2"
+      effort="100"
+      velocity="1" />
+  </joint>
+</robot>
