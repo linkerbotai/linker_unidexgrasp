@@ -1,0 +1,12 @@
+2025-01-23 17:12:44,065 - EvalModel - INFO - Resume from epoch 1401
+2025-01-23 17:12:45,199 - EvalModel - INFO - Resume from epoch 1601
+2025-01-24 10:28:30,299 - EvalModel - INFO - Resume from epoch 1401
+2025-01-24 10:28:31,374 - EvalModel - INFO - Resume from epoch 1601
+2025-01-24 11:06:03,801 - EvalModel - INFO - Resume from epoch 1401
+2025-01-24 11:06:04,693 - EvalModel - INFO - Resume from epoch 1601
+2025-01-24 11:14:32,632 - EvalModel - INFO - Resume from epoch 1401
+2025-01-24 11:14:36,203 - EvalModel - INFO - Resume from epoch 1601
+2025-01-24 11:30:24,614 - EvalModel - INFO - Resume from epoch 1401
+2025-01-24 11:30:25,460 - EvalModel - INFO - Resume from epoch 1601
+2025-01-24 14:17:18,388 - EvalModel - INFO - Resume from epoch 1401
+2025-01-24 14:17:19,333 - EvalModel - INFO - Resume from epoch 1601

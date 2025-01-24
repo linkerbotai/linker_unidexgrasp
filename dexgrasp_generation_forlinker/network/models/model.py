@@ -1,0 +1,209 @@
+import torch.nn as nn
+import torch
+import os
+import sys
+from os.path import join as pjoin
+from abc import abstractmethod
+from copy import deepcopy
+from hydra import compose
+from omegaconf.omegaconf import open_dict
+from collections import OrderedDict
+
+base_path = os.path.dirname(__file__)
+sys.path.insert(0, base_path)
+sys.path.insert(0, pjoin(base_path, '..'))
+sys.path.insert(0, pjoin(base_path, '..', '..'))
+
+from network.models.loss import discretize_gt_cm
+from network.models.graspipdf.ipdf_network import IPDFFullNet
+from network.models.graspglow.glow_network import DexGlowNet
+from network.models.contactnet.contact_network import ContactMapNet
+
+def get_last_model(dirname, key=""):
+    if not os.path.exists(dirname):
+        return None
+    models = [pjoin(dirname, f) for f in os.listdir(dirname) if
+              os.path.isfile(pjoin(dirname, f)) and
+              key in f and ".pt" in f]
+    if models is None or len(models) == 0:
+        return None
+    models.sort()
+    last_model_name = models[-1]
+    return last_model_name
+
+def get_model(dir, resume_epoch):
+    last_model_name = get_last_model(dir)
+    print('last model name', last_model_name)
+    if resume_epoch is not None and resume_epoch > 0:
+        specified_model = pjoin(dir, f"model_{resume_epoch:04d}.pt")
+        if os.path.exists(specified_model):
+            last_model_name = specified_model
+    return last_model_name
+
+class BaseModel(nn.Module):
+    def __init__(self, cfg):
+        super(BaseModel, self).__init__()
+        self.device = cfg['device']
+        self.loss_weights = cfg['model']['loss_weight']
+
+        self.cfg = cfg
+        self.feed_dict = {}
+        self.pred_dict = {}
+        self.save_dict = {}
+        self.loss_dict = {}
+
+    def summarize_losses(self, loss_dict):
+        total_loss = 0
+        for key, item in self.loss_weights.items():
+            if key in loss_dict:
+                total_loss += loss_dict[key] * item
+        loss_dict['total_loss'] = total_loss
+        self.loss_dict = loss_dict
+
+    def update(self):
+        self.pred_dict = self.net(self.feed_dict)
+        self.compute_loss()
+        self.loss_dict['total_loss'].backward()
+
+    def set_data(self, data):
+        self.feed_dict = {}
+        for key, item in data.items():
+            if key in [""]:
+                continue
+            if type(item) == torch.Tensor:
+                item = item.float().to(self.device)
+            self.feed_dict[key] = item
+
+    @abstractmethod
+    def compute_loss(self):
+        pass
+
+    @abstractmethod
+    def test(self, save=False, no_eval=False, epoch=0):
+        pass
+
+
+class IPDFModel(BaseModel):
+    def __init__(self, cfg):
+        super(IPDFModel, self).__init__(cfg)
+        self.net = IPDFFullNet(cfg).to(self.device)
+
+    def compute_loss(self):
+        pred_dict = self.pred_dict
+        loss_dict = {}
+
+        if "probability" in pred_dict:
+            probability = pred_dict["probability"]  # [B]
+            loss = -torch.mean(torch.log(probability))
+
+            loss_dict["nll"] = loss
+
+            self.summarize_losses(loss_dict)
+
+            # for logging
+            loss_dict["mean_probability"] = torch.mean(pred_dict["probability"])
+
+        if "mean_local_prob" in pred_dict:
+            loss_dict["mean_local_prob"] = torch.mean(pred_dict["local_prob"])
+        if "mean_confidence" in pred_dict:
+            loss_dict["mean_confidence"] = torch.mean(pred_dict["confidence"])
+
+    def test(self, save=False, no_eval=False, epoch=0):
+        self.loss_dict = {}
+        with torch.no_grad():
+            self.pred_dict = self.net(self.feed_dict)
+            sampled_rotation = self.net.sample_rotations(self.feed_dict)  # [B, 3, 3]
+            self.pred_dict["sampled_rotation"] = sampled_rotation  # [B, 3, 3]
+
+            if not no_eval:
+                self.compute_loss()
+
+class GlowModel(BaseModel):
+    def __init__(self, cfg):
+        super(GlowModel, self).__init__(cfg)
+        if cfg['model']['joint_training']:#如果联合训练的话，加载ratation——net和contact_net一起训练
+            rotation_cfg = compose(f"{cfg['model']['rotation_net']['type']}_config")
+            with open_dict(rotation_cfg):
+                rotation_cfg['device'] = self.device
+            self.rotation_net = IPDFFullNet(rotation_cfg)
+            ckpt_dir = pjoin(rotation_cfg['exp_dir'], 'ckpt')
+            model_name = get_model(ckpt_dir, rotation_cfg.get('resume_epoch', None))
+            ckpt = torch.load(model_name)['model']
+            new_ckpt = OrderedDict()
+            for name in ckpt.keys():
+                new_ckpt[name.replace('net.', '')] = ckpt[name]
+            self.rotation_net.load_state_dict(new_ckpt)
+            self.rotation_net = self.rotation_net.to(self.device)
+            contact_cfg = compose(f"{cfg['model']['contact_net']['type']}_config")
+            with open_dict(contact_cfg):
+                contact_cfg['device'] = self.device
+            self.contact_net = ContactMapNet(contact_cfg)
+            ckpt_dir = pjoin(contact_cfg['exp_dir'], 'ckpt')
+            model_name = get_model(ckpt_dir, contact_cfg.get('resume_epoch', None))
+            ckpt = torch.load(model_name)['model']
+            new_ckpt = OrderedDict()
+            for name in ckpt.keys():
+                new_ckpt[name.replace('net.', '')] = ckpt[name]
+            self.contact_net.load_state_dict(new_ckpt)
+            self.contact_net = self.contact_net.to(self.device)
+        else:
+            self.rotation_net = None
+            self.contact_net = None
+        self.net = DexGlowNet(cfg, self.rotation_net, self.contact_net).to(self.device)
+
+    def compute_loss(self):
+        pred_dict = self.pred_dict
+        loss_dict = {}
+
+        if 'nll' in pred_dict:
+            loss_dict['nll'] = torch.mean(pred_dict['nll'])
+            loss_dict['cmap_loss'] = torch.mean(pred_dict['cmap_loss'])
+
+            self.summarize_losses(loss_dict)
+
+        # for logging
+        for key in pred_dict.keys():
+            if 'cmap_part' in key:
+                loss_dict[key] = torch.mean(pred_dict[key])
+
+    def test(self, save=False, no_eval=False, epoch=0):
+        self.loss_dict = {}
+        with torch.no_grad():
+            self.pred_dict = self.net(self.feed_dict)
+            self.pred_dict.update(self.net.sample(self.feed_dict))
+
+            if not no_eval:
+                self.compute_loss()
+
+class ContactModel(BaseModel):
+    def __init__(self, cfg):
+        super(ContactModel, self).__init__(cfg)
+        self.net = ContactMapNet(cfg).to(self.device)
+
+        self.cm_loss = nn.MSELoss()
+        self.cm_bin_loss = nn.CrossEntropyLoss()
+
+    def compute_loss(self):
+        loss_dict = {}
+
+        gt_contact_map = self.feed_dict['contact_map']
+        pred_contact_map = self.pred_dict['contact_map']
+
+        if len(pred_contact_map.shape) == 2:
+            # pred_contact_map: [B, N]
+            loss_dict["contact_map"] = self.cm_loss(pred_contact_map, gt_contact_map)
+        elif len(pred_contact_map.shape) == 3:
+            # pred_contact_map: [B, N, 10]
+            gt_bins = discretize_gt_cm(gt_contact_map, num_bins=pred_contact_map.shape[-1])  # [B, N, 10]
+            gt_bins_labels = torch.argmax(gt_bins, dim=-1)  # [B, N]
+            pred_contact_map = pred_contact_map.transpose(2, 1)  # [B, 10, N]
+            loss_dict["contact_map"] = self.cm_bin_loss(pred_contact_map, gt_bins_labels)
+
+        self.summarize_losses(loss_dict)
+
+    def test(self, save=False, no_eval=False, epoch=0):
+        self.loss_dict = {}
+        with torch.no_grad():
+            self.pred_dict = self.net(self.feed_dict)
+            if not no_eval:
+                self.compute_loss()
