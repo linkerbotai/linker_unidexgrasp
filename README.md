@@ -1,3 +1,8 @@
+This project has been moved to the new address, please visit https://github.com/linker-bot/linkerhand-unidexgrasp
+
+----
+
+
 # Linker_UniDexGrasp
 This is a codebase that adapts UniDexGrasp for the Linker Hand L20. 
 
